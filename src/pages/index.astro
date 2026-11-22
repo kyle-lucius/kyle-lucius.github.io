@@ -33,7 +33,7 @@ const wordmark = [
         <a href="#about">关于</a><a href="#archive">归档实验</a><a href="#contact">联系</a>
       </nav>
     </header>
-    <main id="main" class="frame terminal">
+    <main id="main" class="frame terminal" tabindex="-1">
       <div class="titlebar"><span class="terminal-icon" aria-hidden="true">&gt;_</span> ~/kdl <span class="shell">/ profile</span></div>
       <section class="hero" aria-labelledby="name">
         <div class="command" aria-hidden="true"><span>~ $</span> whoami</div>
@@ -77,8 +77,14 @@ const wordmark = [
         <div class="contact-links">
           <a href="mailto:egamer1337@gmail.com">egamer1337@gmail.com</a>
           <a href="https://github.com/kyle-lucius">GitHub / kyle-lucius</a>
+          <a href="https://www.luogu.com.cn/user/1022986">洛谷 / 1022986</a>
         </div>
       </div>
     </footer>
+    <button type="button" id="skip-typing" hidden>跳过动画</button>
+    <script>
+      import { printPage } from '../scripts/typewriter';
+      printPage();
+    </script>
   </body>
 </html>

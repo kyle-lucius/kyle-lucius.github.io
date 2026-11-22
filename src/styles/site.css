@@ -74,6 +74,25 @@ article p { margin-top: .45rem; }
 article a { display: inline-block; padding-block: .35rem; margin-right: 1.2rem; }
 footer .section { border: 0; padding: 2rem clamp(1.4rem, 4vw, 3.2rem) 3rem; }
 .contact-links { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 2rem; overflow-wrap: anywhere; }
+::highlight(unprinted) {
+  color: transparent;
+  text-shadow: none;
+  text-decoration-color: transparent;
+}
+[data-unprinted] { opacity: 0; }
+#skip-typing {
+  position: fixed;
+  z-index: 2;
+  right: 1rem;
+  bottom: 1rem;
+  padding: .5rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: .3rem;
+  background: var(--surface);
+  color: var(--green);
+  font: inherit;
+  cursor: pointer;
+}
 @media (max-width: 47rem) {
   .frame { width: 94%; }
   .hero, .section { grid-template-columns: minmax(0, 1fr); }
