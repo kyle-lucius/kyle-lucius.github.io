@@ -11,6 +11,9 @@
   --scene-tint: #d9e6ee33;
   --hero-halo: #edf7fbc9;
   --shadow: #0b223546;
+  --kards: #38659a;
+  --football: #22816e;
+  --other-games: #aa6a35;
   font-family: Inter, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
   background: var(--background);
   color: var(--ink);
@@ -29,11 +32,14 @@
     --scene-tint: #0614216b;
     --hero-halo: #0d1c28c9;
     --shadow: #030a1370;
+    --kards: #7aa8e2;
+    --football: #66bda7;
+    --other-games: #e9a66e;
   }
 }
 
 * { box-sizing: border-box; }
-body, h1, p { margin: 0; }
+body, h1, h2, p, figure, blockquote { margin: 0; }
 body {
   min-height: 100vh;
   min-height: 100svh;
@@ -75,6 +81,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 h1 { font-size: clamp(2.6rem, 5.4vw, 5.25rem); line-height: 1.04; letter-spacing: -.06em; font-weight: 700; text-wrap: balance; }
 .role { margin-top: 1rem; font-size: clamp(1rem, 2.7vw, 1.2rem); }
+.hero-summary { margin-top: .35rem; }
 .hero-bio {
   max-width: 29rem;
   margin-top: 1.3rem;
@@ -83,9 +90,14 @@ h1 { font-size: clamp(2.6rem, 5.4vw, 5.25rem); line-height: 1.04; letter-spacing
   border-radius: .9rem;
   background: var(--panel);
 }
-.hero-bio p + p { margin-top: .35rem; }
-.hero-social { display: flex; flex-wrap: wrap; gap: .5rem 1.1rem; margin-top: 1.25rem; }
-.hero-social a { color: var(--ink); font-weight: 650; }
+.hero-bio figcaption { color: var(--muted); font-size: .875rem; }
+.hero-bio blockquote { margin-block: .45rem; font-weight: 550; }
+.quote-credit { display: flex; flex-wrap: wrap; gap: .25rem .75rem; color: var(--muted); font-size: .8125rem; }
+.quote-credit cite { font-style: normal; }
+.hero-social { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.25rem; }
+.hero-social a { display: grid; place-items: center; min-width: 2.75rem; min-height: 2.75rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--panel); color: var(--ink); }
+.hero-social a:hover { background: var(--panel-hover); }
+.hero-social :is(svg, img) { display: block; width: 1.35rem; height: 1.35rem; object-fit: contain; }
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -113,11 +125,27 @@ h1 { font-size: clamp(2.6rem, 5.4vw, 5.25rem); line-height: 1.04; letter-spacing
 a.hero-tile:hover { background: var(--panel-hover); }
 a.hero-tile:hover strong { text-decoration: underline; }
 .placeholder { background: var(--placeholder); border-style: dashed; }
+.game-tile h2 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
+.game-chart { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1rem; }
+.donut { display: block; width: clamp(4.1rem, 7.1vw, 6.3rem); max-width: 100%; height: auto; fill: none; stroke-width: 14; }
+.donut-track { stroke: var(--line); }
+.donut-segment { stroke: var(--segment); stroke-dasharray: var(--share) 100; stroke-dashoffset: var(--offset); }
+.game-legend { flex: 1 0 5.65rem; list-style: none; padding: 0; margin: 0; }
+.game-legend li { display: grid; grid-template-columns: .5rem 1fr auto; align-items: center; gap: .35rem; }
+.game-legend li::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--segment); }
+.game-legend :is(span, b) { font-size: .8125rem; }
+.game-legend b { font-variant-numeric: tabular-nums; }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-intro { animation: entrance 420ms ease-out both; }
   .hero-grid { animation: entrance 480ms 80ms ease-out both; }
   a.hero-tile { transition: background-color 160ms ease; }
+  .donut-segment { animation: draw-segment 900ms 230ms ease-out both; }
+}
+
+@keyframes draw-segment {
+  from { stroke-dasharray: 0 100; }
+  to { stroke-dasharray: var(--share) 100; }
 }
 
 @keyframes entrance {
