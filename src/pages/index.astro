@@ -1,8 +1,9 @@
 ---
 import '../styles/site.css';
 
-const title = 'Kyle Lucius · 代号 KDL';
-const description = 'Kyle Lucius（代号 KDL）的个人主页。关于信息学竞赛、Minecraft 模组开发，以及我用 Python 做过的小实验。';
+const name = 'Kyle "KDL" Lucius';
+const title = `${name} · Home`;
+const description = `${name} 的个人主页。关于信息学竞赛、Minecraft 模组开发，以及我用 Python 做过的小实验。`;
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -31,28 +32,41 @@ const description = 'Kyle Lucius（代号 KDL）的个人主页。关于信息�
       </nav>
     </header>
     <main id="main" class="frame" tabindex="-1">
-      <section id="home" class="hero panel" aria-labelledby="name">
+      <section id="home" class="hero" aria-labelledby="name">
         <div class="hero-intro">
-          <h1 id="name">Kyle Lucius</h1>
-          <p class="codename">代号 KDL</p>
+          <h1 id="name">{name}</h1>
           <p class="role">信息学竞赛生 · Minecraft 模组开发者</p>
-          <a class="hero-link" href="#archive">查看项目</a>
-        </div>
-        <div class="hero-details">
-          <div>
-            <h2>开发方向</h2>
+          <div class="hero-bio">
             <p>用 Java 和 Python 解算法题，也为 Minecraft 写模组。</p>
-          </div>
-          <div>
-            <h2>代码之外</h2>
             <p>玩 KARDS 和《实况足球》，支持皇家马德里。</p>
+          </div>
+          <div class="hero-social">
+            <a href="https://github.com/kyle-lucius">GitHub</a>
+            <a href="https://www.luogu.com.cn/user/1022986">洛谷</a>
+            <a href="mailto:egamer1337@gmail.com">邮箱</a>
+          </div>
+        </div>
+        <div class="hero-directory">
+          <div class="hero-group">
+            <h2>归档实验</h2>
+            <div class="hero-grid">
+              <a class="hero-tile hero-link" href="#archive"><strong>CCDabi</strong><span>键盘操作的 Python 游戏</span></a>
+              <a class="hero-tile" href="#archive"><strong>CCChatroom</strong><span>Python 聊天室实验</span></a>
+            </div>
+          </div>
+          <div class="hero-group">
+            <h2>更多</h2>
+            <div class="hero-grid">
+              <a class="hero-tile" href="#about"><strong>关于我</strong><span>竞赛、模组和兴趣</span></a>
+              <a class="hero-tile" href="#contact"><strong>联系我</strong><span>邮箱、GitHub 和洛谷</span></a>
+            </div>
           </div>
         </div>
       </section>
       <section id="about" class="panel">
         <h2>关于我</h2>
         <div class="bio">
-          <p>你好，我是 Kyle，代号 KDL。</p>
+          <p>你好，我是 Kyle。</p>
           <p>我参加信息学竞赛，熟悉 Java 和 Python。除了做算法题，我也喜欢给 Minecraft 写模组。</p>
         </div>
         <h3 class="interest-heading">代码之外</h3>
