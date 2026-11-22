@@ -3,19 +3,19 @@ import '../styles/site.css';
 
 const title = 'Kyle “KDL” Lucius · 信息学竞赛生与开发者';
 const description = 'Kyle “KDL” Lucius 的个人主页。关于信息学竞赛、Minecraft 模组开发，以及我用 Python 做过的小实验。';
-const wordmark = [
-  '██   ██  ██████   ██',
-  '██  ██   ██   ██  ██',
-  '█████    ██   ██  ██',
-  '██  ██   ██   ██  ██',
-  '██   ██  ██████   ███████',
-].join('\n');
 ---
 <!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      if ((!location.hash || location.hash === '#top') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('typing-boot');
+        // Leave the static page readable if the animation script fails to load.
+        setTimeout(() => document.documentElement.classList.remove('typing-boot'), 2000);
+      }
+    </script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={Astro.site} />
@@ -34,10 +34,13 @@ const wordmark = [
       </nav>
     </header>
     <main id="main" class="frame terminal" tabindex="-1">
-      <div class="titlebar"><span class="terminal-icon" aria-hidden="true">&gt;_</span> ~/kdl <span class="shell">/ profile</span></div>
+      <div class="titlebar">
+        <span class="terminal-icon" aria-hidden="true">&gt;_</span> ~/kdl <span class="shell">/ profile</span>
+        <button type="button" id="typing-control" hidden>重播动画</button>
+      </div>
       <section class="hero" aria-labelledby="name">
         <div class="command" aria-hidden="true"><span>~ $</span> whoami</div>
-        <pre class="wordmark" aria-hidden="true">{wordmark}</pre>
+        <div class="wordmark" aria-hidden="true">KDL</div>
         <div class="identity">
           <h1 id="name">Kyle “KDL” Lucius</h1>
           <p>信息学竞赛生 · Minecraft 模组开发者</p>
@@ -81,7 +84,6 @@ const wordmark = [
         </div>
       </div>
     </footer>
-    <button type="button" id="skip-typing" hidden>跳过动画</button>
     <script>
       import { printPage } from '../scripts/typewriter';
       printPage();
