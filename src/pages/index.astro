@@ -3,6 +3,13 @@ import '../styles/site.css';
 
 const title = 'Kyle “KDL” Lucius · 信息学竞赛生与开发者';
 const description = 'Kyle “KDL” Lucius 的个人主页。关于信息学竞赛、Minecraft 模组开发，以及我用 Python 做过的小实验。';
+const wordmark = [
+  '██   ██  ██████   ██',
+  '██  ██   ██   ██  ██',
+  '█████    ██   ██  ██',
+  '██  ██   ██   ██  ██',
+  '██   ██  ██████   ███████',
+].join('\n');
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -21,28 +28,30 @@ const description = 'Kyle “KDL” Lucius 的个人主页。关于信息学竞�
   <body id="top">
     <a class="skip" href="#main">跳到正文</a>
     <header class="frame masthead">
-      <a class="brand" href="#top" aria-label="KDL 首页">KDL<span>.</span></a>
+      <a class="brand" href="#top" aria-label="KDL 首页"><span aria-hidden="true">❯</span> kdl<span class="hostname">@localhost</span></a>
       <nav aria-label="主导航">
         <a href="#about">关于</a><a href="#archive">归档实验</a><a href="#contact">联系</a>
       </nav>
     </header>
-    <main id="main" class="frame">
+    <main id="main" class="frame terminal">
+      <div class="titlebar"><span class="terminal-icon" aria-hidden="true">&gt;_</span> ~/kdl <span class="shell">/ profile</span></div>
       <section class="hero" aria-labelledby="name">
-        <div class="poster" aria-hidden="true"><span>KDL</span></div>
+        <div class="command" aria-hidden="true"><span>~ $</span> whoami</div>
+        <pre class="wordmark" aria-hidden="true">{wordmark}</pre>
         <div class="identity">
-          <h1 id="name">Kyle <span>“KDL”</span><br />Lucius</h1>
-          <p>信息学竞赛生<br />Minecraft 模组开发者</p>
+          <h1 id="name">Kyle “KDL” Lucius</h1>
+          <p>信息学竞赛生 · Minecraft 模组开发者</p>
         </div>
       </section>
       <section id="about" class="section">
-        <h2>关于我</h2>
+        <h2><code aria-hidden="true">cat about.md</code>关于我</h2>
         <div class="bio">
-          <p class="intro">你好，我是 Kyle，<br class="mobile-break" />也可以叫我 KDL。</p>
+          <p class="intro">你好，我是 Kyle，也可以叫我 KDL。</p>
           <p>我参加信息学竞赛，熟悉 Java 和 Python。除了做算法题，我也喜欢给 Minecraft 写模组。</p>
         </div>
       </section>
       <section id="archive" class="section">
-        <h2>归档实验</h2>
+        <h2><code aria-hidden="true">ls archive/</code>归档实验</h2>
         <div class="projects">
           <article>
             <div class="project-heading"><h3>CCDabi</h3><small>已归档</small></div>
@@ -58,13 +67,13 @@ const description = 'Kyle “KDL” Lucius 的个人主页。关于信息学竞�
         </div>
       </section>
       <section class="section">
-        <h2>代码之外</h2>
-        <p class="personal">我喜欢玩 KARDS 和《实况足球》，<br />也是皇家马德里球迷。</p>
+        <h2><code aria-hidden="true">cat interests.md</code>代码之外</h2>
+        <p>我喜欢玩 KARDS 和《实况足球》，也是皇家马德里球迷。</p>
       </section>
     </main>
     <footer id="contact">
       <div class="frame section">
-        <h2>联系我</h2>
+        <h2><code aria-hidden="true">cat contact.txt</code>联系我</h2>
         <div class="contact-links">
           <a href="mailto:egamer1337@gmail.com">egamer1337@gmail.com</a>
           <a href="https://github.com/kyle-lucius">GitHub / kyle-lucius</a>
