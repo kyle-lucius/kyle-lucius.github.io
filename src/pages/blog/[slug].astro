@@ -1,0 +1,35 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { getBlogPosts } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  return (await getBlogPosts()).map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { data } = post;
+const { Content } = await render(post);
+---
+<BlogLayout title={data.title} description={data.description} draft={data.draft} backHref="/blog/" backLabel="返回开发笔记">
+  <article>
+    <header class="article-header">
+      <div class="post-meta">
+        <time datetime={data.date}>{data.date}</time>
+        {data.draft && <span class="draft-label">草稿</span>}
+      </div>
+      <h1>{data.title}</h1>
+      <p class="page-description">{data.description}</p>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BlogLayout>

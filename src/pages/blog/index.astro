@@ -1,0 +1,25 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { getBlogPosts } from '../../lib/blog';
+
+const posts = await getBlogPosts();
+const description = '算法、Minecraft 模组与开发记录';
+---
+<BlogLayout title="开发笔记" {description} backHref="/" backLabel="返回首页">
+  <h1>开发笔记</h1>
+  <p class="page-description">{description}</p>
+  {posts.length ? (
+    <ul class="post-list">
+      {posts.map(({ id, data }) => (
+        <li>
+          <div class="post-meta">
+            <time datetime={data.date}>{data.date}</time>
+            {data.draft && <span class="draft-label">草稿</span>}
+          </div>
+          <h2><a href={`/blog/${id}/`}>{data.title}</a></h2>
+          <p>{data.description}</p>
+        </li>
+      ))}
+    </ul>
+  ) : <p class="empty">暂无已发布的笔记。</p>}
+</BlogLayout>

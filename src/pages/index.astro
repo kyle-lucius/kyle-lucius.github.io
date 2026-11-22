@@ -28,7 +28,7 @@ const games = [
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.site} />
   </head>
-  <body>
+  <body class="homepage">
     <main class="frame hero">
       <section class="hero-intro" aria-labelledby="name">
         <h1 id="name">{name}</h1>
@@ -88,10 +88,10 @@ const games = [
             </ul>
           </div>
         </section>
-        <div class="hero-tile placeholder">
-          <span class="tile-status">待填充</span>
-          <strong>更多实验</strong>
-        </div>
+        <a class="hero-tile" href="/blog/">
+          <strong>开发笔记</strong>
+          <span>算法、Minecraft 模组与开发记录</span>
+        </a>
       </div>
     </main>
     <script>

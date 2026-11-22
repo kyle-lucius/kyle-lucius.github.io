@@ -6,7 +6,6 @@
   --line: #526c823b;
   --link: #244f76;
   --panel: #f1f7fae0;
-  --placeholder: #dae5ecb8;
   --panel-hover: #f8fbfd;
   --scene-tint: #d9e6ee33;
   --hero-halo: #edf7fbc9;
@@ -27,7 +26,6 @@
     --line: #a9c5dc42;
     --link: #acd6fa;
     --panel: #132531de;
-    --placeholder: #1b3445be;
     --panel-hover: #32526b;
     --scene-tint: #0614216b;
     --hero-halo: #0d1c28c9;
@@ -40,6 +38,10 @@
 
 * { box-sizing: border-box; }
 body, h1, h2, p, figure, blockquote { margin: 0; }
+.homepage {
+  -webkit-user-select: none;
+  user-select: none;
+}
 body {
   min-height: 100vh;
   min-height: 100svh;
@@ -129,7 +131,6 @@ h1 { font-size: clamp(2.6rem, 5.4vw, 5.25rem); line-height: 1.04; letter-spacing
 .hero-tile .tile-status { font-size: .8125rem; }
 a.hero-tile:hover { background: var(--panel-hover); }
 a.hero-tile:hover strong { text-decoration: underline; }
-.placeholder { background: var(--placeholder); border-style: dashed; }
 .game-tile h2 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
 .game-chart { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1rem; }
 .donut { display: block; width: clamp(4.1rem, 7.1vw, 6.3rem); max-width: 100%; height: auto; fill: none; stroke-width: 14; }

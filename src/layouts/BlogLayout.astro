@@ -1,0 +1,38 @@
+---
+import '../styles/blog.css';
+
+interface Props {
+  title: string;
+  description: string;
+  backHref: string;
+  backLabel: string;
+  draft?: boolean;
+}
+
+const { title, description, backHref, backLabel, draft = false } = Astro.props;
+const pageTitle = `${title} · Kyle "KDL" Lucius`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {draft && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div class="reader">
+      <header class="reader-header">
+        <a href={backHref}>{backLabel}</a>
+      </header>
+      <main>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
