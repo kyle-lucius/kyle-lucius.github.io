@@ -3,10 +3,10 @@ import '../styles/site.css';
 
 const name = 'Kyle "KDL" Lucius';
 const title = `${name} · Home`;
-const description = `${name} 的个人主页。关于信息学竞赛、Minecraft 模组开发，以及我用 Python 做过的小实验。`;
+const description = `${name} Homepage`;
 const games = [
   { name: 'KARDS', share: 55, color: 'var(--kards)' },
-  { name: '实况足球', share: 40, color: 'var(--football)' },
+  { name: '实况足球', share: 40, color: 'var(--efootball)' },
   { name: '其他', share: 5, color: 'var(--other-games)' },
 ].map((game, index, all) => ({
   ...game,
@@ -72,7 +72,7 @@ const games = [
           <span>Python 聊天室实验</span>
         </a>
         <section class="hero-tile game-tile" aria-labelledby="game-title">
-          <h2 id="game-title">游戏占比</h2>
+          <h2 id="game-title">游戏</h2>
           <div class="game-chart">
             <svg viewBox="0 0 100 100" class="donut" aria-hidden="true">
               <circle class="donut-track" cx="50" cy="50" r="41" />

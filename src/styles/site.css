@@ -12,7 +12,7 @@
   --hero-halo: #edf7fbc9;
   --shadow: #0b223546;
   --kards: #38659a;
-  --football: #22816e;
+  --efootball: #22816e;
   --other-games: #aa6a35;
   font-family: Inter, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
   background: var(--background);
@@ -33,7 +33,7 @@
     --hero-halo: #0d1c28c9;
     --shadow: #030a1370;
     --kards: #7aa8e2;
-    --football: #66bda7;
+    --efootball: #66bda7;
     --other-games: #e9a66e;
   }
 }
