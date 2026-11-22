@@ -1,6 +1,6 @@
-# Kyle “KDL” Lucius 的个人主页
+# Kyle Lucius 的个人主页
 
-中文单页 Astro 作品集，发布于 [kyle-lucius.github.io](https://kyle-lucius.github.io/)。
+Kyle Lucius（代号 KDL）的中文单页 Astro 作品集，发布于 [kyle-lucius.github.io](https://kyle-lucius.github.io/)。
 
 ## 本地开发
 
