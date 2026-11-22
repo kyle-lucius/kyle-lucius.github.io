@@ -98,6 +98,9 @@ h1 { font-size: clamp(2.6rem, 5.4vw, 5.25rem); line-height: 1.04; letter-spacing
 .hero-social a { display: grid; place-items: center; min-width: 2.75rem; min-height: 2.75rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--panel); color: var(--ink); }
 .hero-social a:hover { background: var(--panel-hover); }
 .hero-social :is(svg, img) { display: block; width: 1.35rem; height: 1.35rem; object-fit: contain; }
+.hero-social .social-luogu { background: #23445e; }
+.hero-social .social-luogu:hover { background: #345773; }
+.social-luogu img { width: 2rem; height: 2.125rem; }
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
