@@ -20,146 +20,42 @@ const description = `${name} 的个人主页。关于信息学竞赛、Minecraft
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.site} />
   </head>
-  <body id="top">
-    <a class="skip" href="#main">跳到正文</a>
-    <header class="frame masthead">
-      <a class="brand" href="#home" aria-label="Kyle Lucius 首页">Kyle Lucius</a>
-      <nav aria-label="主导航" data-tabs>
-        <a id="tab-home" href="#home">首页</a>
-        <a id="tab-about" href="#about">关于</a>
-        <a id="tab-archive" href="#archive">项目</a>
-        <a id="tab-contact" href="#contact">联系</a>
-      </nav>
-    </header>
-    <main id="main" class="frame" tabindex="-1">
-      <section id="home" class="hero" aria-labelledby="name">
-        <div class="hero-intro">
-          <h1 id="name">{name}</h1>
-          <p class="role">信息学竞赛生 · Minecraft 模组开发者</p>
-          <div class="hero-bio">
-            <p>用 Java 和 Python 解算法题，也为 Minecraft 写模组。</p>
-            <p>玩 KARDS 和《实况足球》，支持皇家马德里。</p>
-          </div>
-          <div class="hero-social">
-            <a href="https://github.com/kyle-lucius">GitHub</a>
-            <a href="https://www.luogu.com.cn/user/1022986">洛谷</a>
-            <a href="mailto:egamer1337@gmail.com">邮箱</a>
-          </div>
+  <body>
+    <main class="frame hero">
+      <section class="hero-intro" aria-labelledby="name">
+        <h1 id="name">{name}</h1>
+        <p class="role">信息学竞赛生 · Minecraft 模组开发者</p>
+        <div class="hero-bio">
+          <p>用 Java 和 Python 解算法题，也为 Minecraft 写模组。</p>
+          <p>玩 KARDS 和《实况足球》，支持皇家马德里。</p>
         </div>
-        <div class="hero-directory">
-          <div class="hero-group">
-            <h2>归档实验</h2>
-            <div class="hero-grid">
-              <a class="hero-tile hero-link" href="#archive"><strong>CCDabi</strong><span>键盘操作的 Python 游戏</span></a>
-              <a class="hero-tile" href="#archive"><strong>CCChatroom</strong><span>Python 聊天室实验</span></a>
-            </div>
-          </div>
-          <div class="hero-group">
-            <h2>更多</h2>
-            <div class="hero-grid">
-              <a class="hero-tile" href="#about"><strong>关于我</strong><span>竞赛、模组和兴趣</span></a>
-              <a class="hero-tile" href="#contact"><strong>联系我</strong><span>邮箱、GitHub 和洛谷</span></a>
-            </div>
-          </div>
+        <div class="hero-social">
+          <a href="https://github.com/kyle-lucius">GitHub</a>
+          <a href="https://www.luogu.com.cn/user/1022986">洛谷</a>
+          <a href="mailto:egamer1337@gmail.com">邮箱</a>
         </div>
       </section>
-      <section id="about" class="panel">
-        <h2>关于我</h2>
-        <div class="bio">
-          <p>你好，我是 Kyle。</p>
-          <p>我参加信息学竞赛，熟悉 Java 和 Python。除了做算法题，我也喜欢给 Minecraft 写模组。</p>
+
+      <div class="hero-grid">
+        <a class="hero-tile" href="https://theccking.github.io/#ccdabi">
+          <span class="tile-status">已归档</span>
+          <strong>CCDabi</strong>
+          <span>一个完全用键盘操作的 Python 游戏。</span>
+        </a>
+        <a class="hero-tile" href="https://theccking.github.io/#ccchatroom">
+          <span class="tile-status">已归档</span>
+          <strong>CCChatroom</strong>
+          <span>Python 聊天室实验</span>
+        </a>
+        <div class="hero-tile placeholder">
+          <span class="tile-status">待填充</span>
+          <strong>开发笔记</strong>
         </div>
-        <h3 class="interest-heading">代码之外</h3>
-        <p>我喜欢玩 KARDS 和《实况足球》，也是皇家马德里球迷。</p>
-      </section>
-      <section id="archive" class="panel">
-        <h2>归档实验</h2>
-        <div class="projects">
-          <article>
-            <div class="project-heading"><h3>CCDabi</h3><small>已归档</small></div>
-            <p>一个完全用键盘操作的 Python 游戏。玩家可以选择技能，在结算时查看双方的资源。</p>
-            <a href="https://theccking.github.io/manual.html">阅读玩家手册</a>
-            <a href="https://theccking.github.io/#ccdabi">项目归档</a>
-          </article>
-          <article>
-            <div class="project-heading"><h3>CCChatroom</h3><small>已归档</small></div>
-            <p>用 Python 写的聊天室实验，分为服务端和客户端。两个程序都保存在 CCKing 系列软件归档里。</p>
-            <a href="https://theccking.github.io/#ccchatroom">查看聊天室归档</a>
-          </article>
+        <div class="hero-tile placeholder">
+          <span class="tile-status">待填充</span>
+          <strong>更多实验</strong>
         </div>
-      </section>
-      <section id="contact" class="panel">
-        <h2>联系我</h2>
-        <div class="contact-links">
-          <a href="mailto:egamer1337@gmail.com"><strong>邮箱</strong><span>egamer1337@gmail.com</span></a>
-          <a href="https://github.com/kyle-lucius"><strong>GitHub</strong><span>kyle-lucius</span></a>
-          <a href="https://www.luogu.com.cn/user/1022986"><strong>洛谷</strong><span>用户 1022986</span></a>
-        </div>
-      </section>
+      </div>
     </main>
-    <script>
-      const list = document.querySelector<HTMLElement>('[data-tabs]')!;
-      const tabs = [...list.querySelectorAll<HTMLAnchorElement>('a')];
-      const panels = tabs.map(tab => document.getElementById(tab.hash.slice(1))!);
-
-      function showTab(index: number) {
-        tabs.forEach((tab, position) => {
-          const selected = position === index;
-          tab.setAttribute('aria-selected', String(selected));
-          tab.tabIndex = selected ? 0 : -1;
-          panels[position].hidden = !selected;
-        });
-      }
-
-      function syncTab() {
-        showTab(Math.max(0, tabs.findIndex(tab => tab.hash === location.hash)));
-      }
-
-      function activate(index: number, moveFocus = false) {
-        const tab = tabs[index];
-        if (tab.hash !== location.hash) history.pushState(null, '', tab.hash);
-        showTab(index);
-        if (moveFocus) tab.focus();
-      }
-
-      list.setAttribute('role', 'tablist');
-      tabs.forEach((tab, index) => {
-        const panel = panels[index];
-        tab.setAttribute('role', 'tab');
-        tab.setAttribute('aria-controls', panel.id);
-        panel.setAttribute('role', 'tabpanel');
-        panel.setAttribute('aria-labelledby', tab.id);
-        panel.tabIndex = 0;
-      });
-
-      document.addEventListener('click', event => {
-        if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-        const link = (event.target as Element).closest<HTMLAnchorElement>('a[href^="#"]');
-        const index = link ? tabs.findIndex(tab => tab.hash === link.hash) : -1;
-        if (index < 0) return;
-        event.preventDefault();
-        activate(index, !list.contains(link));
-      });
-
-      list.addEventListener('keydown', event => {
-        const index = tabs.indexOf(event.target as HTMLAnchorElement);
-        if (index < 0) return;
-        const destinations: Record<string, number> = {
-          ArrowLeft: (index + tabs.length - 1) % tabs.length,
-          ArrowRight: (index + 1) % tabs.length,
-          Home: 0,
-          End: tabs.length - 1,
-          ' ': index,
-        };
-        const next = destinations[event.key];
-        if (next === undefined) return;
-        event.preventDefault();
-        activate(next, true);
-      });
-
-      window.addEventListener('hashchange', syncTab);
-      window.addEventListener('popstate', syncTab);
-      syncTab();
-    </script>
   </body>
 </html>
